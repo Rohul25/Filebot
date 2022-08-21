@@ -28,13 +28,11 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
 
-📡 **Hosted on:** [Heroku](https://heroku.com)
-
 🧑🏻‍💻 **Developer:** @AdvikKumar 
 
-👥 **Support:** [TG Tamil](https://t.me/TgTamilBot)
+👥 **Support:** **[TG Tamil](https://t.me/TgTamilBot)**
 
-📢 **Updates Channel:** [Viral Beatz ](https://t.me/ViralBeatz)
+📢 **Updates Channel:** **[Viral Beatz](https://t.me/ViralBeatz)**
 """
 	ABOUT_DEV_TEXT = f"""
 🧑🏻‍💻 **Developer:** @AdvikKumar 
