@@ -1,36 +1,21 @@
-FROM ubuntu:18.04
+FROM debian:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt upgrade -y
 
-WORKDIR /app
+RUN apt-get install ffmpeg -y
 
-RUN apt-get update
-RUN echo y | apt-get install locales
-RUN echo y | apt install build-essential
-RUN apt -qq install -y --no-install-recommends \
-    curl \
-    git \
-    gnupg2 \
-    wget
+RUN apt -qq install -y git python3 python3-pip
 
-RUN set -ex; \
-    apt-get update \
-    && apt-get install -y --no-install-recommends \
-        busybox \
-	git \
-	python3 \
-	python3-dev \
-	python3-pip \
-	python3-lxml \
-	pv \
-	&& apt-get autoclean \
-        && apt-get autoremove \
-        && rm -rf /var/lib/apt/lists/*
+RUN pip3 install -U pip
 
-RUN pip3 install setuptools wheel yarl multidict
-COPY requirements.txt .
-RUN pip3 install -r requirements.txt
-RUN dpkg-reconfigure locales
-COPY . /app
+RUN cd /
 
-CMD ["python3", "bot.py"]
+RUN git clone https://github.com/Rohul25/Filebot
+
+RUN cd FileBot
+
+WORKDIR /FileBot
+
+RUN pip install -U -r requirements.txt
+
+CMD python3 bot.py
